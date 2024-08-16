@@ -16,6 +16,7 @@ repositories {
 
 val vertxVersion = "4.5.9"
 val junitJupiterVersion = "5.9.1"
+val logbackVersion = "1.5.6"
 
 val mainVerticleName = "com.udemy.vertx_websockets.MainVerticle"
 val launcherClassName = "io.vertx.core.Launcher"
@@ -30,6 +31,7 @@ application {
 dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
   implementation("io.vertx:vertx-core")
+  implementation("ch.qos.logback:logback-classic:$logbackVersion")
   testImplementation("io.vertx:vertx-junit5")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
