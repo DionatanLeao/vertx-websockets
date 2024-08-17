@@ -21,7 +21,7 @@ public class PriceBroadcast {
 
   private void periodicUpdate(final Vertx vertx) {
     vertx.setPeriodic(Duration.ofSeconds(1).toMillis(), id -> {
-      LOG.debug("Push update to {} client(s)!", connectedClients.size()); 
+      LOG.debug("Push update to {} client(s)!", connectedClients.size());
       final String priceUpdate = new JsonObject()
         .put("symbol", "AMZN")
         .put("value", new Random().nextInt(1000))
