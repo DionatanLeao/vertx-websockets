@@ -11,7 +11,7 @@ public class MainVerticle extends AbstractVerticle {
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
     vertx.createHttpServer()
-      .webSocketHandler(new WebSocketHandler())
+      .webSocketHandler(new WebSocketHandler(vertx))
       .listen(8900, http -> {
       if (http.succeeded()) {
         startPromise.complete();
